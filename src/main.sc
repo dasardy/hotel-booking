@@ -4,8 +4,16 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Начнём.
-
+        a: Здравствуйте! Я виртуальный ассистент для поиска и бронирования отелей. Чем могу помочь?
+        go!: ChooseOperation
+        
+        
+    state: ChooseOperation
+        intent!: /поиск отелей
+        a: Пожалуйста, введите город, в котором хотите найти отель.
+        
+        
+        
     state: Hello
         intent!: /привет
         a: Привет привет
@@ -21,3 +29,6 @@ theme: /
     state: Match
         event!: match
         a: {{$context.intent.answer}}
+        
+        
+        
