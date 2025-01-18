@@ -1,6 +1,5 @@
 require: functions.js
 require: slotfilling/slotFilling.sc
-
     module = sys.zb-common
 theme: /
 
@@ -17,7 +16,8 @@ theme: /
             script:
                 var city = $entities[0].value;
                 $reactions.answer("Вы ввели:" + city);
-                
+                var hotels_list = fetch_hotels_by_city(city);
+                $reactions.answer("Вы ввели:" + hotels_list.data.hotels);
             
         
         
