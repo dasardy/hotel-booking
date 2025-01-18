@@ -11,9 +11,10 @@ theme: /
         a: Пожалуйста, введите город, в котором хотите найти отель.
         
         state: ChooseCity
-           q!: * @pymorphy.geox *
-           a: Вы выбрали:
-            
-        
+            q!: * @pymorphy.geox *
+            script:
+                $city = request.match
+            a: Вы выбрали город {{ $city }}
+                
         
         
