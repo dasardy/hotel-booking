@@ -13,8 +13,8 @@ theme: /
         state: ChooseCity
             q!: * @pymorphy.geox *
             script:
-                var city = $request.match
-            a: Вы выбрали город {{ city }}
-                
+                var city = $entities[0].value;
+                $reactions.answer("Вы ввели:" + city);
+        
         
         
