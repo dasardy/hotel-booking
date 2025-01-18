@@ -1,4 +1,6 @@
-require: slotfilling/slotFilling.sc, functions.js
+require: functions.js
+require: slotfilling/slotFilling.sc
+
     module = sys.zb-common
 theme: /
 

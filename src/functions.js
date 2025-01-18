@@ -11,8 +11,6 @@ function fetch_hotels_by_city(city){
         });
         
     return response;
-    
-    
-    
+
 }
     
