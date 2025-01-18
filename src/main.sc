@@ -17,7 +17,8 @@ theme: /
                 var city = $entities[0].value;
                 $reactions.answer("Вы ввели:" + city);
                 var hotels_list = fetch_hotels_by_city(city);
-                $reactions.answer("Вы ввели:" + hotels_list.data.hotels[0].name);
+                $reactions.answer("Вы ввели:" + hotels_list[0].name);
+                
             
         
         

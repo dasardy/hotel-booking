@@ -9,7 +9,7 @@ function fetch_hotels_by_city(city){
         dataType: "json"
         });
     
-    log(toPrettyString(response));
-    return response;
+    log(toPrettyString(response.data.hotels));
+    return response.data.hotels;
 }
     
