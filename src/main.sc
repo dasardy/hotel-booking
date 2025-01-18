@@ -1,3 +1,4 @@
+require: 
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
 theme: /
@@ -15,6 +16,7 @@ theme: /
             script:
                 var city = $entities[0].value;
                 $reactions.answer("Вы ввели:" + city);
-        
+                
+            
         
         
