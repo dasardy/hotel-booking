@@ -28,13 +28,22 @@ theme: /
                     $session.sort_type = $entities[0].value;
                     $reactions.answer("Вы выбрали сортировку номер " + $session.sort_type + ".");
                     $reactions.answer("Введите предпочтительный рейтинг отеля: ");
+                go: ChoosePreferRating
+            
+            
+            state: ConfirmSortType
+                a: Вы выбрали сортировку номер $session.sort_type. Подтвердите (да/нет).
+                q: * да *
+                go: ChoosePreferRating
+                q: * нет *
+                go: ChooseSortType
                 
                 state: ChoosePreferRating
-                    q: * (@duckling.number/@duckling.ordinal) *
+                     q: * (@duckling.number/@duckling.ordinal) *
                     script: 
                         $session.rating = $entities[0].value;
                         $reactions.answer("Ваш предпочтительный рейтинг: " + $session.rating);
-                        
+                            
         
             
         
