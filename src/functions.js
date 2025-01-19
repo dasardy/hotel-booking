@@ -1,4 +1,4 @@
-var static_url = "https://81ff-94-131-12-15.ngrok-free.app"
+var static_url = "https://30b0-94-131-12-15.ngrok-free.app"
 function fetch_hotels_by_city(city){
     var response = $http.query(static_url+"/search_hotels", {
         method: "GET",

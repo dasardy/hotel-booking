@@ -12,13 +12,24 @@ theme: /
         a: Пожалуйста, введите город, в котором хотите найти отель.
         
         state: ChooseCity
-            q!: * @pymorphy.geox *
+            q: * @pymorphy.geox *
             script:
-                var city = $entities[0].value;
-                $reactions.answer("Вы ввели:" + city);
-                var hotels_list = fetch_hotels_by_city(city);
-                $reactions.answer("Вы ввели:" + hotels_list[0].name);
+                $session.city = $entities[0].value;
+                $reactions.answer("Вас понял. Ищем отели в городе " + $session.city);
+                $reactions.answer("Пожалуйста, выберите один из трёх типов сортировки: \n 1.Сортировка по рейтингу \n 2.Сортировка по релевантности. \n 3.Сортировка по алфавиту.");
+                # var hotels_list = fetch_hotels_by_city($session.city);
+                # $reactions.answer("Вы ввели:" + hotels_list[0].name);
+            go: ChooseSortType
+            
+            
+            state: ChooseSortType
+                q: * @duckling.number | @duckling.ordinal *
+                script: 
+                    $session.sort_type = $entities[0].value;
+                    $reactions.answer("Вы выбрали сортировку номер " + $session.sort_type + ".");
                 
+                
+        
             
         
         
