@@ -23,11 +23,12 @@ theme: /
             
             
             state: ChooseSortType
-                q: * @duckling.number | @duckling.ordinal *
+                q: * (@duckling.number/@duckling.ordinal) *
                 script: 
                     $session.sort_type = $entities[0].value;
                     $reactions.answer("Вы выбрали сортировку номер " + $session.sort_type + ".");
                 
+            
                 
         
             
