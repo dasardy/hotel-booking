@@ -10,7 +10,7 @@ theme: /
     state: SearchHotels
         intent!: /поиск отелей
         a: Пожалуйста, введите город, в котором хотите найти отель.
-        
+    
         state: ChooseCity
             q: * @pymorphy.geox *
             script:
@@ -27,9 +27,14 @@ theme: /
                 script: 
                     $session.sort_type = $entities[0].value;
                     $reactions.answer("Вы выбрали сортировку номер " + $session.sort_type + ".");
+                    $reactions.answer("Введите предпочтительный рейтинг отеля: ");
                 
-            
-                
+                state: ChoosePreferRating
+                    q: * (@duckling.number/@duckling.ordinal) *
+                    script: 
+                        $session.rating = $entities[0].value;
+                        $reactions.answer("Ваш предпочтительный рейтинг: " + $session.rating);
+                        
         
             
         
